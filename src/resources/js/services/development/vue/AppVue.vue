@@ -4,6 +4,10 @@ import Parts from "./app-vue/Parts.vue";
 
 console.log("AppVue");
 
+defineProps<{
+  sampleData: string;
+}>();
+
 const title = ref<string>("");
 const content = ref<string>("");
 
@@ -20,6 +24,9 @@ const test = () => {
 <template>
   <div className="p-6 text-xl text-blue-600">Vue + Vite + Tailwind</div>
   <div className="space-y-3">
+    <div>
+      <div>Viewから渡した値: {{ sampleData }}</div>
+    </div>
     <div>
       <button type="button" @click="test" className="app-btn-primary">
         Test

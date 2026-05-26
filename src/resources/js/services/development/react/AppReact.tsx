@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import Parts from "./app-react/Parts";
 
-export default function AppReact() {
-  console.log('AppReact');
+type Prop = {
+  sampleData: string;
+};
+
+export default function AppReact({ sampleData }: Prop) {
+  console.log("AppReact");
 
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
@@ -34,6 +38,9 @@ export default function AppReact() {
     <>
       <div className="p-6 text-xl text-red-600">React + Vite + Tailwind</div>
       <div className="space-y-3">
+        <div>
+          <div>Viewから渡した値: {sampleData}</div>
+        </div>
         <div>
           <button type="button" onClick={test} className="app-btn-primary">
             Test

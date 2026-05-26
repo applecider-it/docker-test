@@ -34,7 +34,8 @@ class DevelopmentController
             'book' => 'Book',
         ];
         $category = 'tech';
-        return render('development.javascript', compact('categoryHash', 'category'));
+        $sampleData = 'サンプルデータ';
+        return render('development.javascript', compact('categoryHash', 'category', 'sampleData'));
     }
 
     /** javascript動作確認 htmx API */
