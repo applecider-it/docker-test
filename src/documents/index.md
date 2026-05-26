@@ -21,7 +21,7 @@ Macでも動作確認済み
 - Vue
 - React
 - HTMX
-- Turbo
+- Turbo Drive
 
 
 ## 構造
