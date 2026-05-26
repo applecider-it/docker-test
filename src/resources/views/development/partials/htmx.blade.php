@@ -1,6 +1,4 @@
 <div class="space-y-5">
-  <div>ある程度まではできるけど、複雑なものや、詳細までカスタマイズが必須の場合はvueにするしかない。</div>
-
   <form 
     hx-get="/development/javascript_htmx"
     hx-trigger="load, input changed delay:400ms"
