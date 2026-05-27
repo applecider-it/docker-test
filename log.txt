@@ -179,3 +179,40 @@ docker compose exec node npm uninstall \
   @nomicfoundation/hardhat-toolbox \
   hardhat \
   @openzeppelin/contracts
+
+
+-----------------------------------
+
+Kubernetesクラスタのサーバー一覧を取得
+
+kubectl get nodes
+
+nginxコンテナを管理する Deployment を作成
+
+kubectl create deployment nginx --image=nginx
+
+Deploymentを外部アクセス可能にしてる
+
+kubectl expose deployment nginx --type=NodePort --port=80
+
+実際に動いてるアプリ一覧を見る
+
+kubectl get pods
+
+Service一覧を見る
+
+kubectl get svc
+ポート確認
+
+http://localhost:確認したポート/
+
+Pod詳細
+
+kubectl describe pod POD名
+
+-----------------------------------
+
+
+
+kubectl apply -f .
+

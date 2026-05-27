@@ -122,4 +122,47 @@ docker compose exec node npx hardhat run scripts/deploy.js --network localhost
 docker compose exec node npx hardhat run scripts/nft-test.js --network localhost
 
 
+-----------------------------------
+
+Kubernetes
+
+cd ~/workspace/github/docker-test/k8s
+
+
+kubectl apply -f .
+
+kubectl delete -f .
+
+
+----
+
+ログ
+
+kubectl logs -f deployment/nginx
+
+kubectl logs -f deployment/php
+
+kubectl logs -f -l app
+
+----
+
+接続
+
+kubectl exec -it deployment/nginx -- sh
+
+kubectl exec -it deployment/php -- sh
+
+----
+
+Kubernetesクラスタのサーバー一覧を取得
+
+kubectl get nodes
+
+実際に動いてるアプリ一覧を見る
+
+kubectl get pods
+
+Service一覧を見る
+
+kubectl get svc
 
