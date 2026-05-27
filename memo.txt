@@ -133,6 +133,7 @@ kubectl apply -f .
 
 kubectl delete -f .
 
+http://localhost:30080/
 
 ----
 
