@@ -218,5 +218,5 @@ kubectl apply -f .
 
 -----------------------------------
 
-composer require --dev phpunit/phpunit
+docker compose exec php composer require --dev phpunit/phpunit
 

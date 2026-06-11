@@ -167,3 +167,10 @@ Service一覧を見る
 
 kubectl get svc
 
+-----------------------------------
+
+テスト
+
+cd ~/workspace/github/docker-test/src
+
+docker compose exec php ./vendor/bin/phpunit
