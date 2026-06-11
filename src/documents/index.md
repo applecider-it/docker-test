@@ -35,6 +35,7 @@ public/ WEBのエントリーポイント
 resources/  リソース
 routes/ ルート
 storage/  ストレージ
+tests/ ユニットテスト
 ```
 
 
