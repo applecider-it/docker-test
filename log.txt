@@ -216,3 +216,7 @@ kubectl describe pod POD名
 
 kubectl apply -f .
 
+-----------------------------------
+
+composer require --dev phpunit/phpunit
+
