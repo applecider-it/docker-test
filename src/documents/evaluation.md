@@ -1,5 +1,17 @@
 # 評価
 
+## vite, importmap
+
+viteが使える状況では、viteが無難。
+
+importmapは、バニラJSで、JSモジュールを使いたいときにあったほうがいい機能だけど、viteに比べると、管理は、かなり厄介になる。
+
+## javascript, typescript
+
+javascriptは、IDEで無理が出やすい。
+
+特殊な状況以外では、typescriptが無難。
+
 ## vue, react
 
 reactはメンテナンスコストが高くなりがちなので非推奨。
