@@ -66,4 +66,10 @@ class DevelopmentController
     {
         return render('development.turbo2');
     }
+
+    /** importmap動作確認 */
+    public function importmap()
+    {
+        return render('development.importmap');
+    }
 }

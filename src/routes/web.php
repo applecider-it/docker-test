@@ -2,6 +2,8 @@
 
 /**
  * ルート設定
+ * 
+ * @var Illuminate\Routing\Router $router
  */
 
 use App\Controllers\HomeController;
@@ -16,5 +18,6 @@ $router->get('/development/database', [DevelopmentController::class, 'database']
 $router->get('/development/javascript', [DevelopmentController::class, 'javascript'])->name('development.javascript');
 $router->get('/development/javascript_htmx', [DevelopmentController::class, 'javascript_htmx'])->name('development.javascript_htmx');
 $router->get('/development/atomic', [DevelopmentController::class, 'atomic'])->name('development.atomic');
+$router->get('/development/importmap', [DevelopmentController::class, 'importmap'])->name('development.importmap');
 $router->get('/development/turbo', [DevelopmentController::class, 'turbo'])->name('development.turbo');
 $router->get('/development/turbo2', [DevelopmentController::class, 'turbo2'])->name('development.turbo2');

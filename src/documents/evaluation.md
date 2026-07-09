@@ -6,6 +6,8 @@ viteが使える状況では、viteが無難。
 
 importmapは、バニラJSで、JSモジュールを使いたいときにあったほうがいい機能だけど、viteに比べると、管理はかなり厄介になる。
 
+Firefoxのimportmapは厳格で、importmapを複数定義できなかったり、モジュール実行する前に定義が必要だったりする。
+
 ## javascript, typescript
 
 javascriptは、IDEで無理が出やすい。

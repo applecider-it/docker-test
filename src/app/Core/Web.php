@@ -16,11 +16,17 @@ class Web
     {
         $router = app('router');
 
-        $request = Request::create($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
-        $response = $router->dispatch($request);
+        try {
+            $request = Request::create($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+            $response = $router->dispatch($request);
 
-        $html = $response->getContent();
+            $html = $response->getContent();
 
-        echo $html;
+            echo $html;
+        } catch (\Throwable $e) {
+            echo '<pre>';
+            echo htmlspecialchars((string)$e);
+            echo '</pre>';
+        }
     }
 }
