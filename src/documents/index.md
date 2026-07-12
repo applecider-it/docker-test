@@ -42,6 +42,7 @@ tests/ ユニットテスト
 ## その他
 
 - [評価](./evaluation.md)
+- [ユニットテスト](./test.md)
 - [イノベーション](./innovation.md)
 - [コメントについて](./comment.md)
 - [理想のコードと認知負荷](./code.md)
