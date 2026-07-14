@@ -1,5 +1,4 @@
 @php
-use App\Services\Javascript\ViteService;
 use function App\Helpers\route;
 @endphp
 <!doctype html>

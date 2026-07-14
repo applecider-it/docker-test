@@ -1,11 +1,13 @@
 @php
 use function App\Helpers\route;
-use App\Services\Javascript\ViteService;
+use function App\Helpers\app;
+
+$vite = app('vite');
 @endphp
 @extends('layouts.turbo')
 @section('content')
 
-<script type="module" src="{{ ViteService::asset('resources/js/entrypoints/development/turbo-test.ts') }}"></script>
+{!! $vite->importJs('resources/js/entrypoints/development/turbo-test.ts') !!}
 
 <h2 class="app-h2">development.turbo</h2>
 

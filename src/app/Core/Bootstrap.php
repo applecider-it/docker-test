@@ -23,6 +23,8 @@ use Illuminate\Config\Repository;
 use function App\Helpers\app;
 use function App\Helpers\config;
 
+use App\Services\Web\Vite;
+
 /**
  * ブートストラップ
  */
@@ -38,6 +40,8 @@ class Bootstrap
         $this->eloquent();
 
         $this->view();
+
+        $this->others();
     }
 
     /** コアの初期化 */
@@ -134,6 +138,14 @@ class Bootstrap
             $url = new UrlGenerator($routes, $request);
 
             return $url;
+        });
+    }
+
+    /** その他初期化 */
+    private function others()
+    {
+        app()->singleton('vite', function () {
+            return new Vite;
         });
     }
 }

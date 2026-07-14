@@ -1,5 +1,7 @@
 @php
-use App\Services\Javascript\ViteService;
+use function App\Helpers\app;
+
+$vite = app('vite');
 
 $version = '20260709_0000';
 $imports = [
@@ -13,5 +15,5 @@ $imports = [
 
 <script type="importmap">{!! json_encode(['imports' => $imports]) !!}</script>
 
-{!! ViteService::init() !!}
-<link rel="stylesheet" href="{{ ViteService::asset('resources/css/app.css') }}">
+{!! $vite->init() !!}
+{!! $vite->importCss('resources/css/app.css') !!}
