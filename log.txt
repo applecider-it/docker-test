@@ -225,3 +225,7 @@ docker compose exec php composer require --dev phpunit/phpunit
 
 
 npm install swiper
+
+
+rails new myapp
+
