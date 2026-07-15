@@ -22,6 +22,10 @@ RUN apt-get update -qq && \
     bash && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+# npm用
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
+
 # 環境変数を開発向けに設定
 ENV RAILS_ENV="development" \
     BUNDLE_PATH="/usr/local/bundle"
