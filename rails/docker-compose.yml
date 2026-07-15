@@ -36,7 +36,7 @@ services:
       dockerfile: ./docker/web/Dockerfile
     user: "1000:1000"
     # Viteの開発サーバーを起動するコマンド
-    command: bundle exec vite dev
+    command: bash -c "npm ci && bundle exec vite dev"
     volumes:
       - .:/app
     ports:
