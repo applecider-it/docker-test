@@ -4,6 +4,15 @@ use function App\Helpers\app;
 $vite = app('vite');
 
 $sectionClass = 'border-4 p-5';
+
+$list = [
+    '/images/sample.svg',
+    '/images/sample.svg',
+    '/images/sample.svg',
+    '/images/sample.svg',
+    '/images/sample.svg',
+];
+
 @endphp
 @extends('layouts.app')
 @section('content')
@@ -32,6 +41,22 @@ $sectionClass = 'border-4 p-5';
 
     <h3 class="app-h3">htmx</h3>
     <div class="{{ $sectionClass }}">@include('development.partials.htmx')</div>
+
+    <h3 class="app-h3">swiper</h3>
+
+    <div class="swiper-container swiper-container1">
+        <div class="swiper swiper1">
+            <div class="swiper-wrapper">
+                @foreach ($list as $val)
+                    <div class="swiper-slide">
+                        <Image src="{{ $val }}" alt="" class="mx-auto" />
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="swiper-pagination swiper-pagination1"></div>
+        </div>
+    </div>
 </div>
 
 @endsection

@@ -220,3 +220,8 @@ kubectl apply -f .
 
 docker compose exec php composer require --dev phpunit/phpunit
 
+-----------------------------------
+
+
+
+npm install swiper
