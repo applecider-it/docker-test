@@ -43,6 +43,7 @@ RUN chmod +x /rails/bin/docker-entrypoint
 
 # Railsのデフォルトポート
 EXPOSE 3000
+EXPOSE 3036
 
 USER 1000:1000
 

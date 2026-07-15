@@ -7,6 +7,7 @@ services:
       dockerfile: ./docker/Dockerfile
     ports:
       - "3000:3000"
+      - "3036:3036"
     volumes:
       - .:/rails                      # ローカルのコードをコンテナ内にマウントして即時反映
     environment:

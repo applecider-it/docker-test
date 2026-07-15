@@ -277,3 +277,4 @@ docker compose exec web rails generate devise User
 
 docker compose exec web bundle exec vite install
 
+docker compose exec web bin/vite dev
