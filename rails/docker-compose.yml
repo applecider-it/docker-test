@@ -25,6 +25,26 @@ services:
     environment:
       DATABASE_HOST: db
       DATABASE_PASSWORD: password
+      # Viteサーバーをコンテナ名で参照できるように環境変数を渡す
+      #VITE_RUBY_HOST: vite
+      # 書き込み権限エラー対応
+      npm_config_cache: /app/.npm
+
+  vite:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    user: "1000:1000"
+    # Viteの開発サーバーを起動するコマンド
+    command: bundle exec vite dev
+    volumes:
+      - .:/app
+    ports:
+      - "3073:3073"
+    environment:
+      VITE_RUBY_HOST: 0.0.0.0
+      # 書き込み権限エラー対応
+      npm_config_cache: /app/.npm
 
 volumes:
   db_data:

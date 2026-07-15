@@ -1,8 +1,9 @@
-# 使用するRubyのバージョンを指定
 FROM ruby:3.2.2
 
-# 必要なパッケージ（PostgreSQLクライアントやNode.jsなど）をインストール
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y postgresql-client
+
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
 
 # コンテナ内にアプリ用のディレクトリを作成
 WORKDIR /app

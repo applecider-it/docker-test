@@ -21,12 +21,25 @@ link_style = "hover:text-indigo-500"
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%#= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%#= javascript_importmap_tags %>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application' %>
+    <!--
+      If using a TypeScript entrypoint file:
+        vite_typescript_tag 'application'
+
+      If using a .jsx or .tsx entrypoint, add the extension:
+        vite_javascript_tag 'application.jsx'
+
+      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
+    -->
+
   </head>
 
   <body>
     <div>
+      <%= link_to 'Top', root_path, class: link_style %>
       <% if user_signed_in? %>
         <%= link_to current_user.email, edit_user_registration_path, class: link_style %>
         <%= button_to 'Logout',

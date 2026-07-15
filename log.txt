@@ -275,3 +275,5 @@ Depending on your application's configuration some manual setup may be required:
 
 docker compose exec web rails generate devise User
 
+docker compose exec web bundle exec vite install
+

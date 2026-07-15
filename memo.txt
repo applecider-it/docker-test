@@ -37,6 +37,7 @@ docker compose up
 
 http://localhost:3000
 
+test@localhost.com / testtest
 
 -----------------------------------
 
