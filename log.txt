@@ -229,3 +229,4 @@ npm install swiper
 
 rails new myapp
 
+docker compose exec web rails generate controller home index
