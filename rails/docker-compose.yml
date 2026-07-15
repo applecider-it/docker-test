@@ -1,0 +1,30 @@
+name: docker_wsl_rails
+
+services:
+  db:
+    image: postgres:15
+    ports:
+      - "5433:5432"   # ホスト5433 → コンテナ5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    user: "1000:1000"
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails db:create && bin/rails db:migrate && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PASSWORD: password
+
+volumes:
+  db_data:
