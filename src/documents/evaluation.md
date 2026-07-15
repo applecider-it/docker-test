@@ -104,7 +104,7 @@ CSS管理の最後の手段だと思う。
 
 @applyを全く使わない運用は非推奨。
 
-tailwind4は、@applyでクラスの継承ができないので、tailwind3のほうが管理が楽だと思う。
+tailwind4は、@applyのクラスの継承ができないけど、@utilityを使うことで可能。
 
 ## docker
 
