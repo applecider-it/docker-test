@@ -9,17 +9,34 @@ port
 php: 4000:80
 vite: 4173:4173
 mysql: 4306:3306
+rails: 3000
 
 -----------------------------------
 
-http://localhost:4000
+PHP
 
+
+cd ~/workspace/github/docker-test/src
 
 docker compose down
 
 docker compose up
 
 docker compose up --build
+
+http://localhost:4000
+
+----
+
+Rails
+
+cd ~/workspace/github/docker-test/rails
+
+docker compose up
+
+
+http://localhost:3000
+
 
 -----------------------------------
 
@@ -49,6 +66,20 @@ cd ~/workspace/github/docker-test/bc
 docker compose up
 
 docker compose exec node npm ci
+
+----
+
+Rails
+
+cd ~/workspace/github/docker-test/rails
+
+bundle install
+
+bin/rails db:create
+
+bin/rails db:migrate
+
+bin/rails db:seed
 
 
 -----------------------------------
