@@ -32,12 +32,23 @@ Rails
 
 cd ~/workspace/github/docker-test/rails
 
+
+docker起動
+
 docker compose up
+
+docker compose exec web bin/vite dev
+
+
+ローカル起動
+
+bin/rails s
+
+bin/vite dev
 
 
 http://localhost:3000
 
-test@localhost.com / testtest
 
 -----------------------------------
 
@@ -73,6 +84,8 @@ docker compose exec node npm ci
 Rails
 
 cd ~/workspace/github/docker-test/rails
+
+bundle install
 
 docker compose up
 
