@@ -46,3 +46,4 @@ tests/ ユニットテスト
 - [イノベーション](./innovation.md)
 - [コメントについて](./comment.md)
 - [理想のコードと認知負荷](./code.md)
+- [技術選択](./selection.md)
