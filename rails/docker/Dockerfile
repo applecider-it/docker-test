@@ -50,4 +50,4 @@ USER 1000:1000
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # 外部（ホストPC）からアクセスできるように「-b 0.0.0.0」を指定してRailsサーバーを起動
-CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
+#CMD ["./bin/rails", "server", "-b", "0.0.0.0"]

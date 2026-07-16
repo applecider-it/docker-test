@@ -37,6 +37,8 @@ docker起動
 
 docker compose up
 
+docker compose exec web bin/rails server -b 0.0.0.0
+
 docker compose exec web bin/vite dev
 
 

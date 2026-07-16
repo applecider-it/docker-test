@@ -12,5 +12,6 @@ services:
       - .:/rails                      # ローカルのコードをコンテナ内にマウントして即時反映
     environment:
       - RAILS_ENV=development
+    command: tail -f /dev/null
     tty: true                         # binding.pry などのデバッガを使えるようにする
     stdin_open: true                  # 同上
