@@ -290,3 +290,5 @@ bin/rails generate scaffold Post title:string body:text
 bin/rails db:migrate
 
 npm install -D typescript @types/node
+
+npm install vue @vitejs/plugin-vue
