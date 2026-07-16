@@ -300,3 +300,15 @@ composer create-project laravel/laravel myapp
 npm install
 
 php artisan make:controller HomeController
+
+
+sudo mysql
+
+CREATE DATABASE laravel_db_docker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE USER 'laravel_user_docker'@'%' IDENTIFIED BY 'secret1234';
+GRANT ALL PRIVILEGES ON laravel_db_docker.* TO 'laravel_user_docker'@'%';
+
+FLUSH PRIVILEGES;
+
+

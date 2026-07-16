@@ -61,11 +61,19 @@ http://localhost:3000
 
 Laravel
 
+
+ローカル起動
+
 cd ~/workspace/github/docker-test/laravel
 
 composer dev
 
 http://localhost:8000
+
+
+docker起動
+
+docker compose up
 
 -----------------------------------
 
@@ -130,9 +138,19 @@ Laravel
 
 cd ~/workspace/github/docker-test/laravel
 
+
 ローカル起動
 
+composer install
+
 npm ci
+
+cp .env.example .env
+
+php artisan key:generate
+
+php artisan migrate
+
 
 -----------------------------------
 
