@@ -57,6 +57,13 @@ docker compose exec web bin/vite dev
 
 http://localhost:3000
 
+----
+
+Laravel
+
+cd ~/workspace/github/docker-test/laravel
+
+composer dev
 
 -----------------------------------
 
@@ -114,6 +121,16 @@ docker compose up
 docker compose exec web bin/rails db:create
 
 docker compose exec web bin/rails db:migrate
+
+----
+
+Laravel
+
+cd ~/workspace/github/docker-test/laravel
+
+ローカル起動
+
+npm ci
 
 -----------------------------------
 
