@@ -288,3 +288,5 @@ npm install vite-plugin-full-reload --save-dev
 bin/rails generate scaffold Post title:string body:text
 
 bin/rails db:migrate
+
+npm install -D typescript @types/node

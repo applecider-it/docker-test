@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import RubyPlugin from 'vite-plugin-ruby'
 import FullReload from 'vite-plugin-full-reload'
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -18,6 +19,11 @@ export default defineConfig({
     watch: {
       usePolling: true,
       interval: 300,
+    },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'app/javascript'),
     },
   },
 })
