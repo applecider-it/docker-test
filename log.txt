@@ -299,3 +299,4 @@ composer create-project laravel/laravel myapp
 
 npm install
 
+php artisan make:controller HomeController

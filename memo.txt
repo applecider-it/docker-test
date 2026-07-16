@@ -65,6 +65,8 @@ cd ~/workspace/github/docker-test/laravel
 
 composer dev
 
+http://localhost:8000
+
 -----------------------------------
 
 セットアップ
