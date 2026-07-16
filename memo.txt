@@ -18,6 +18,8 @@ PHP
 
 cd ~/workspace/github/docker-test/src
 
+docker compose build
+
 docker compose down
 
 docker compose up
@@ -33,6 +35,13 @@ Rails
 cd ~/workspace/github/docker-test/rails
 
 
+ローカル起動
+
+bin/rails s
+
+bin/vite dev
+
+
 docker起動
 
 docker compose up
@@ -40,13 +49,6 @@ docker compose up
 docker compose exec web bin/rails server -b 0.0.0.0
 
 docker compose exec web bin/vite dev
-
-
-ローカル起動
-
-bin/rails s
-
-bin/vite dev
 
 
 http://localhost:3000
@@ -88,6 +90,19 @@ Rails
 cd ~/workspace/github/docker-test/rails
 
 
+ローカル起動
+
+bundle install
+
+npm ci
+
+cp _env.example .env
+
+bin/rails db:create
+
+bin/rails db:migrate
+
+
 docker起動
 
 docker compose up
@@ -95,15 +110,6 @@ docker compose up
 docker compose exec web bin/rails db:create
 
 docker compose exec web bin/rails db:migrate
-
-
-ローカル起動
-
-bundle install
-
-bin/rails db:create
-
-bin/rails db:migrate
 
 -----------------------------------
 
