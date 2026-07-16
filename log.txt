@@ -292,3 +292,7 @@ bin/rails db:migrate
 npm install -D typescript @types/node
 
 npm install vue @vitejs/plugin-vue
+
+-----------------------------------
+
+composer create-project laravel/laravel myapp
