@@ -284,3 +284,7 @@ npm install -D tailwindcss@^3.4.18 postcss autoprefixer
 npx tailwindcss init -p
 
 npm install vite-plugin-full-reload --save-dev
+
+bin/rails generate scaffold Post title:string body:text
+
+bin/rails db:migrate

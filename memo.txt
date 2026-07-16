@@ -87,9 +87,23 @@ Rails
 
 cd ~/workspace/github/docker-test/rails
 
-bundle install
+
+docker起動
 
 docker compose up
+
+docker compose exec web bin/rails db:create
+
+docker compose exec web bin/rails db:migrate
+
+
+ローカル起動
+
+bundle install
+
+bin/rails db:create
+
+bin/rails db:migrate
 
 -----------------------------------
 
