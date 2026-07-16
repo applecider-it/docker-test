@@ -37,6 +37,8 @@ cd ~/workspace/github/docker-test/rails
 
 ローカル起動
 
+foreman start -f Procfile.dev
+
 bin/rails s
 
 bin/vite dev
@@ -45,6 +47,8 @@ bin/vite dev
 docker起動
 
 docker compose up
+
+docker compose exec web bundle exec foreman start -f Procfile.docker.dev
 
 docker compose exec web bin/rails server -b 0.0.0.0
 

@@ -112,6 +112,8 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
+    foreman (0.90.0)
+      thor (~> 1.4)
     fugit (1.13.0)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -362,6 +364,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails
+  foreman
   importmap-rails
   jbuilder
   kamal
