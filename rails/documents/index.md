@@ -4,6 +4,9 @@
 
 - Vite動作確認
 - Tailwind動作確認
+- TypeScript動作確認
+- Vue動作確認
+- DB動作確認
 
 ## 細かいこと
 
