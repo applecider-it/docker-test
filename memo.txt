@@ -82,12 +82,28 @@ DB_HOST
 
 composer dev
 
+php artisan serve
+
+npm run dev
+
+ビルド
+
+npm run build
+
 
 docker起動
 
 docker compose up
 
 docker compose exec php composer docker
+
+docker compose exec php php artisan serve --host=0.0.0.0
+
+docker compose exec php npm run dev
+
+ビルド
+
+docker compose exec php npm run build
 
 
 http://localhost:8000
