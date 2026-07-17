@@ -52,6 +52,12 @@ bin/rails s
 
 bin/vite dev
 
+ビルド
+
+RAILS_ENV=production bin/rails assets:precompile
+
+RAILS_ENV=production bin/rails s
+
 
 docker起動
 
@@ -62,6 +68,12 @@ docker compose exec web bundle exec foreman start -f Procfile.docker.dev
 docker compose exec web bin/rails server -b 0.0.0.0
 
 docker compose exec web bin/vite dev
+
+ビルド
+
+docker compose exec web sh -c "RAILS_ENV=production bin/rails assets:precompile"
+
+docker compose exec web sh -c "RAILS_ENV=production bin/rails server -b 0.0.0.0"
 
 
 http://localhost:3000
