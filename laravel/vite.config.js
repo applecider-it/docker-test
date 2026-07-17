@@ -1,15 +1,15 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import { bunny } from 'laravel-vite-plugin/fonts';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import { bunny } from "laravel-vite-plugin/fonts";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ["resources/css/app.css", "resources/js/app.js"],
             refresh: true,
             fonts: [
-                bunny('Instrument Sans', {
+                bunny("Instrument Sans", {
                     weights: [400, 500, 600],
                 }),
             ],
@@ -17,8 +17,17 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
+        host: "0.0.0.0",
+        port: 5173,
+        hmr: {
+            host: "localhost",
+            port: 5173, // ← 追加
+            clientPort: 5173, // ← 明示的に指定(念のため両方書くと確実)
+        },
         watch: {
-            ignored: ['**/storage/framework/views/**'],
+            usePolling: true,
+            interval: 300,
+            ignored: ["**/storage/framework/views/**"],
         },
     },
 });

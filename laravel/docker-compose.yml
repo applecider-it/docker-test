@@ -1,0 +1,33 @@
+name: docker_wsl_laravel
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8000:8000"
+      - "5173:5173"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+    command: tail -f /dev/null
+    tty: true
+    stdin_open: true
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "4306:3306" # ← ホストからも触りたい場合
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel_db_docker
+      MYSQL_USER: laravel_user_docker
+      MYSQL_PASSWORD: secret1234
+      TZ: Asia/Tokyo
+    volumes:
+      - mysql-data-docker:/var/lib/mysql
+
+volumes:
+  mysql-data-docker:

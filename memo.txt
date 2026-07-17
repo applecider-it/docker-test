@@ -6,10 +6,17 @@ cd ~/workspace/github/docker-test/src
 
 port
 
-php: 4000:80
+nginx: 4000:80
 vite: 4173:4173
 mysql: 4306:3306
-rails: 3000
+
+rails: 3000:3000
+rails vite: 3036:3036
+rails postgres: 5433:5432
+
+laravel: 8000:8000
+laravel vite: 5173:5173
+laravel mysql: 4306:3306
 
 -----------------------------------
 
@@ -19,6 +26,8 @@ PHP
 cd ~/workspace/github/docker-test/src
 
 docker compose build
+
+docker compose build --no-cache
 
 docker compose down
 
@@ -62,18 +71,26 @@ http://localhost:3000
 Laravel
 
 
-ローカル起動
-
 cd ~/workspace/github/docker-test/laravel
 
-composer dev
+.env
+DB_HOST
+変更
 
-http://localhost:8000
+
+ローカル起動
+
+composer dev
 
 
 docker起動
 
 docker compose up
+
+docker compose exec php composer docker
+
+
+http://localhost:8000
 
 -----------------------------------
 
@@ -139,6 +156,11 @@ Laravel
 cd ~/workspace/github/docker-test/laravel
 
 
+.env
+DB_HOST
+変更
+
+
 ローカル起動
 
 composer install
@@ -151,6 +173,12 @@ php artisan key:generate
 
 php artisan migrate
 
+
+docker起動
+
+docker compose up
+
+docker compose exec php php artisan migrate
 
 -----------------------------------
 
