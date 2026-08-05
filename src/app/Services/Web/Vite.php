@@ -23,10 +23,10 @@ class Vite
         $this->devUrl = 'http://localhost:' . config('vite.port');
         $this->prodUrl = '/build';
 
-        $manifest_path = APP_ROOT . '/public/build/.vite/manifest.json';
+        $manifestPath = APP_ROOT . '/public/build/.vite/manifest.json';
 
         if (!$this->isDev) {
-            $this->manifest = json_decode(file_get_contents($manifest_path), true);
+            $this->manifest = json_decode(file_get_contents($manifestPath), true);
         }
     }
 
