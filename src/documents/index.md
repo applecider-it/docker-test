@@ -1,9 +1,5 @@
 # Docker + PHP動作確認
 
-wsl + Docker + Viteの動作確認用
-
-Macでも動作確認済み
-
 - [設計](./design.md)
 
 ## その他
