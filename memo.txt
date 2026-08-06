@@ -10,18 +10,7 @@ nginx: 4000:80
 vite: 4173:4173
 mysql: 4306:3306
 
-rails: 3000:3000
-rails vite: 3036:3036
-rails postgres: 5433:5432
-
-laravel: 8000:8000
-laravel vite: 5173:5173
-laravel mysql: 4306:3306
-
 -----------------------------------
-
-PHP
-
 
 cd ~/workspace/github/docker-test/src
 
@@ -37,95 +26,11 @@ docker compose up --build
 
 http://localhost:4000
 
-----
-
-Rails
-
-cd ~/workspace/github/docker-test/rails
-
-
-ローカル起動
-
-foreman start -f Procfile.dev
-
-bin/rails s
-
-bin/vite dev
-
-ビルド
-
-RAILS_ENV=production bin/rails assets:precompile
-
-RAILS_ENV=production bin/rails s
-
-
-docker起動
-
-docker compose up
-
-docker compose exec web bundle exec foreman start -f Procfile.docker.dev
-
-docker compose exec web bin/rails server -b 0.0.0.0
-
-docker compose exec web bin/vite dev
-
-ビルド
-
-docker compose exec web sh -c "RAILS_ENV=production bin/rails assets:precompile"
-
-docker compose exec web sh -c "RAILS_ENV=production bin/rails server -b 0.0.0.0"
-
-
-http://localhost:3000
-
-----
-
-Laravel
-
-
-cd ~/workspace/github/docker-test/laravel
-
-.env
-DB_HOST
-変更
-
-
-ローカル起動
-
-composer dev
-
-php artisan serve
-
-npm run dev
-
-ビルド
-
-npm run build
-
-
-docker起動
-
-docker compose up
-
-docker compose exec php composer docker
-
-docker compose exec php php artisan serve --host=0.0.0.0
-
-docker compose exec php npm run dev
-
-ビルド
-
-docker compose exec php npm run build
-
-
-http://localhost:8000
 
 -----------------------------------
 
 セットアップ
 
-
-PHP
 
 cd ~/workspace/github/docker-test/src
 
@@ -141,84 +46,6 @@ docker compose exec node npm ci
 
 下記、テーブル作成、テストデータ追加を実行
 
-----
-
-ブロックチェーン
-
-cd ~/workspace/github/docker-test/bc
-
-docker compose up
-
-docker compose exec node npm ci
-
-----
-
-Rails
-
-cd ~/workspace/github/docker-test/rails
-
-
-ローカル起動
-
-bundle install
-
-npm ci
-
-cp _env.example .env
-
-bin/rails db:create
-
-bin/rails db:migrate
-
-
-docker起動
-
-docker compose up
-
-docker compose exec web npm ci
-
-docker compose exec web bin/rails db:create
-
-docker compose exec web bin/rails db:migrate
-
-----
-
-Laravel
-
-cd ~/workspace/github/docker-test/laravel
-
-
-.env
-DB_HOST
-変更
-
-
-ローカル起動
-
-composer install
-
-npm ci
-
-cp .env.example .env
-
-php artisan key:generate
-
-php artisan migrate
-
-
-docker起動
-
-docker compose up
-
-cp .env.example .env
-
-docker compose exec php composer install
-
-docker compose exec php npm ci
-
-docker compose exec php php artisan key:generate
-
-docker compose exec php php artisan migrate
 
 -----------------------------------
 
@@ -271,75 +98,9 @@ SQL
 
 -----------------------------------
 
-ブロックチェーン
-
-cd ~/workspace/github/docker-test/bc
-
-docker compose up
-
-
-仮想ブロックチェーン起動
-
-docker compose exec node npm run dev
-
-docker compose exec node npx hardhat node
-
-動作確認
-
-docker compose exec node npx hardhat run scripts/deploy.js --network localhost
-
-docker compose exec node npx hardhat run scripts/nft-test.js --network localhost
-
-
------------------------------------
-
-Kubernetes
-
-cd ~/workspace/github/docker-test/k8s
-
-
-kubectl apply -f .
-
-kubectl delete -f .
-
-http://localhost:30080/
-
-----
-
-ログ
-
-kubectl logs -f deployment/nginx
-
-kubectl logs -f deployment/php
-
-kubectl logs -f -l app
-
-----
-
-接続
-
-kubectl exec -it deployment/nginx -- sh
-
-kubectl exec -it deployment/php -- sh
-
-----
-
-Kubernetesクラスタのサーバー一覧を取得
-
-kubectl get nodes
-
-実際に動いてるアプリ一覧を見る
-
-kubectl get pods
-
-Service一覧を見る
-
-kubectl get svc
-
------------------------------------
-
 テスト
 
 cd ~/workspace/github/docker-test/src
 
 docker compose exec php ./vendor/bin/phpunit
+
