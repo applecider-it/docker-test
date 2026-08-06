@@ -21,6 +21,13 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 EXPOSE 8000
 EXPOSE 5173
 
+# 非rootユーザー用のホームディレクトリ設定と作成 ---
+ENV HOME=/home/laravel \
+    npm_config_cache=/home/laravel/.npm
+
+RUN mkdir -p /home/laravel/.npm && \
+    chown -R 1000:1000 /home/laravel
+
 USER 1000:1000
 
 WORKDIR /var/www/html

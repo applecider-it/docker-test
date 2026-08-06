@@ -45,6 +45,13 @@ RUN chmod +x /rails/bin/docker-entrypoint
 EXPOSE 3000
 EXPOSE 3036
 
+# 非rootユーザー用のホームディレクトリ設定と作成 ---
+ENV HOME=/home/rails \
+    npm_config_cache=/home/rails/.npm
+
+RUN mkdir -p /home/rails/.npm && \
+    chown -R 1000:1000 /home/rails
+
 USER 1000:1000
 
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]

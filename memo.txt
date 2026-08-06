@@ -139,6 +139,8 @@ docker compose exec php composer install
 
 docker compose exec node npm ci
 
+下記、テーブル作成、テストデータ追加を実行
+
 ----
 
 ブロックチェーン
@@ -173,6 +175,8 @@ docker起動
 
 docker compose up
 
+docker compose exec web npm ci
+
 docker compose exec web bin/rails db:create
 
 docker compose exec web bin/rails db:migrate
@@ -205,6 +209,14 @@ php artisan migrate
 docker起動
 
 docker compose up
+
+cp .env.example .env
+
+docker compose exec php composer install
+
+docker compose exec php npm ci
+
+docker compose exec php php artisan key:generate
 
 docker compose exec php php artisan migrate
 
