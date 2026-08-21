@@ -11,3 +11,4 @@
 - [理想のコードと認知負荷](./code.md)
 - [技術選択](./selection.md)
 - [適性](./aptitude.md)
+- [最後に残ったレイトマジョリティ](./latemajority.md)
