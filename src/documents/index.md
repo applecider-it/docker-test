@@ -12,3 +12,4 @@
 - [技術選択](./selection.md)
 - [適性](./aptitude.md)
 - [最後に残ったレイトマジョリティ](./latemajority.md)
+- [境界は意外と曖昧](./border.md)
