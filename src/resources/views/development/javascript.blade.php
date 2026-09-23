@@ -1,0 +1,54 @@
+@php
+use function App\Helpers\app;
+
+$vite = app('vite');
+
+$sectionClass = 'border-4 p-5';
+
+$list = [
+    '/images/sample.svg',
+    '/images/sample.svg',
+    '/images/sample.svg',
+    '/images/sample.svg',
+    '/images/sample.svg',
+];
+
+@endphp
+@extends('layouts.app')
+@section('content')
+
+{!! $vite->importJs('resources/js/entrypoints/development/javascript-test.ts') !!}
+
+<h2 class="app-h2">development.javascript</h2>
+
+<div class="space-y-5">
+    <h3 class="app-h3">alpine</h3>
+    <div class="{{ $sectionClass }}">@include('development.partials.alpine')</div>
+
+    <h3 class="app-h3">vue</h3>
+    <div id="vue" class="{{ $sectionClass }}"
+        data-all="{{ json_encode([
+            'sampleData' => $sampleData,
+        ]) }}"
+    ></div>
+
+    <h3 class="app-h3">react</h3>
+    <div id="react" class="{{ $sectionClass }}"
+        data-all="{{ json_encode([
+            'sampleData' => $sampleData,
+        ]) }}"
+    ></div>
+
+    <h3 class="app-h3">htmx</h3>
+    <div class="{{ $sectionClass }}">@include('development.partials.htmx')</div>
+
+    <h3 class="app-h3">swiper</h3>
+    <div class="mt-5">
+        @include("partials.ui.slide-show")
+    </div>
+    <div class="mt-5">
+        @include("partials.ui.slide-show")
+    </div>
+</div>
+
+@endsection

@@ -1,0 +1,314 @@
+
+-----------------------------------
+
+
+docker compose exec nginx ls -l /var/www/html
+
+-----------------------------------
+
+docker compose run --rm node npm install -D tailwindcss@^3 postcss autoprefixer
+
+docker compose run --rm node npx tailwindcss init
+
+-----------------------------------
+
+docker compose run --rm node npm install -D \
+  vite \
+  tailwindcss@^3 \
+  postcss \
+  autoprefixer
+
+
+docker compose run --rm node npm install -D vite-plugin-full-reload
+
+docker compose exec node npm install -D typescript @types/node
+
+docker compose exec node npx tsc -v
+
+mv vite.config.js vite.config.ts
+
+docker compose exec node sh
+
+npm install react react-dom
+npm install -D @vitejs/plugin-react
+
+npm install -D @types/react @types/react-dom
+
+
+composer dump-autoload
+
+docker compose exec php composer require vlucas/phpdotenv
+
+docker compose exec node npm install -D vue @vitejs/plugin-vue
+
+-----------------------------------
+
+INSERT INTO users (name) VALUES
+('テスト１'),
+('テスト２'),
+('テスト３');
+
+SELECT * FROM users;
+
+
+-----------------------------------
+
+docker compose exec php composer require illuminate/database
+
+-----------------------------------
+
+docker compose exec php composer require doctrine/orm
+docker compose exec php composer require doctrine/dbal
+
+docker compose exec php composer require symfony/cache
+
+-----------------------------------
+
+
+docker compose exec php composer require laminas/laminas-db
+
+-----------------------------------
+
+
+
+docker compose exec php composer require illuminate/view illuminate/filesystem illuminate/events
+
+docker compose exec php composer require illuminate/routing illuminate/http illuminate/events illuminate/container
+
+-----------------------------------
+
+
+docker compose exec node npm install htmx.org
+
+docker compose exec node npm install alpinejs
+
+docker compose exec node npm i --save-dev @types/alpinejs
+
+-----------------------------------
+
+
+docker compose exec php composer require voku/html-min
+
+-----------------------------------
+
+docker compose exec php composer require illuminate/config
+
+-----------------------------------
+
+docker compose exec node npm install @hotwired/turbo
+
+docker compose exec node npm i --save-dev @types/hotwired__turbo
+
+
+docker compose exec node npm uninstall  @hotwired/turbo
+
+docker compose exec node npm uninstall --save-dev @types/hotwired__turbo
+
+
+-----------------------------------
+
+docker compose exec php composer remove doctrine/orm
+docker compose exec php composer remove doctrine/dbal
+
+docker compose exec php composer remove symfony/cache
+
+docker compose exec php composer remove laminas/laminas-db
+
+-----------------------------------
+
+
+docker compose exec php composer remove voku/html-min
+
+-----------------------------------
+
+
+docker compose exec node npm uninstall htmx.org
+
+-----------------------------------
+
+docker compose exec node npm install --save-dev hardhat@^2.22.0
+
+docker compose exec node npx hardhat init --force
+
+docker compose exec node npx hardhat compile
+
+docker compose exec node npx hardhat node
+
+docker compose exec node npx hardhat run scripts/deploy.js --network localhost
+
+docker compose exec node npm install @openzeppelin/contracts@4.9.6
+
+-----------------------------------
+
+
+
+docker compose exec node npm install @hotwired/turbo
+
+-----------------------------------
+
+
+
+docker compose exec node npm uninstall \
+  @types/alpinejs \
+  @types/node \
+  @types/react \
+  @types/react-dom \
+  @vitejs/plugin-react \
+  @vitejs/plugin-vue \
+  tailwindcss \
+  vite-plugin-full-reload \
+  vue \
+  alpinejs \
+  htmx.org \
+  react \
+  react-dom \
+  @hotwired/turbo \
+  vite \
+  autoprefixer \
+  postcss
+
+-----------------------------------
+
+
+
+docker compose exec node npm uninstall --save-dev hardhat@^2.22.0
+
+docker compose exec node npm uninstall @openzeppelin/contracts@4.9.6
+
+docker compose exec node npm uninstall \
+  @nomicfoundation/hardhat-toolbox \
+  hardhat \
+  @openzeppelin/contracts
+
+
+-----------------------------------
+
+Kubernetesクラスタのサーバー一覧を取得
+
+kubectl get nodes
+
+nginxコンテナを管理する Deployment を作成
+
+kubectl create deployment nginx --image=nginx
+
+Deploymentを外部アクセス可能にしてる
+
+kubectl expose deployment nginx --type=NodePort --port=80
+
+実際に動いてるアプリ一覧を見る
+
+kubectl get pods
+
+Service一覧を見る
+
+kubectl get svc
+ポート確認
+
+http://localhost:確認したポート/
+
+Pod詳細
+
+kubectl describe pod POD名
+
+-----------------------------------
+
+
+
+kubectl apply -f .
+
+-----------------------------------
+
+docker compose exec php composer require --dev phpunit/phpunit
+
+-----------------------------------
+
+
+
+npm install swiper
+
+
+rails new myapp
+
+docker compose exec web rails generate controller home index
+
+docker compose exec web rails generate devise:install
+
+
+      create  config/initializers/devise.rb
+      create  config/locales/devise.en.yml
+===============================================================================
+
+Depending on your application's configuration some manual setup may be required:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+     * Required for all applications. *
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+     * Not required for API-only Applications *
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+     * Not required for API-only Applications *
+
+  4. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+     * Not required *
+
+===============================================================================
+
+docker compose exec web rails generate devise User
+
+docker compose exec web bundle exec vite install
+
+docker compose exec web bin/vite dev
+
+npm install -D tailwindcss@^3.4.18 postcss autoprefixer
+
+npx tailwindcss init -p
+
+npm install vite-plugin-full-reload --save-dev
+
+bin/rails generate scaffold Post title:string body:text
+
+bin/rails db:migrate
+
+npm install -D typescript @types/node
+
+npm install vue @vitejs/plugin-vue
+
+-----------------------------------
+
+composer create-project laravel/laravel myapp
+
+npm install
+
+php artisan make:controller HomeController
+
+
+sudo mysql
+
+CREATE DATABASE laravel_db_docker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE USER 'laravel_user_docker'@'%' IDENTIFIED BY 'secret1234';
+GRANT ALL PRIVILEGES ON laravel_db_docker.* TO 'laravel_user_docker'@'%';
+
+FLUSH PRIVILEGES;
+
+

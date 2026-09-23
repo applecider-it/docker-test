@@ -1,0 +1,81 @@
+
+Rails
+
+cd ~/workspace/github/docker-test/rails
+
+-----------------------------------
+
+port
+
+rails: 3000:3000
+rails vite: 3036:3036
+rails postgres: 5433:5432
+
+-----------------------------------
+
+ローカル起動
+
+foreman start -f Procfile.dev
+
+bin/rails s
+
+bin/vite dev
+
+ビルド
+
+RAILS_ENV=production bin/rails assets:precompile
+
+RAILS_ENV=production bin/rails s
+
+
+docker起動
+
+docker compose up
+
+docker compose exec web bundle exec foreman start -f Procfile.docker.dev
+
+docker compose exec web bin/rails server -b 0.0.0.0
+
+docker compose exec web bin/vite dev
+
+ビルド
+
+docker compose exec web sh -c "RAILS_ENV=production bin/rails assets:precompile"
+
+docker compose exec web sh -c "RAILS_ENV=production bin/rails server -b 0.0.0.0"
+
+
+http://localhost:3000
+
+
+-----------------------------------
+
+セットアップ
+
+
+cd ~/workspace/github/docker-test/rails
+
+
+ローカル起動
+
+bundle install
+
+npm ci
+
+cp _env.example .env
+
+bin/rails db:create
+
+bin/rails db:migrate
+
+
+docker起動
+
+docker compose up
+
+docker compose exec web npm ci
+
+docker compose exec web bin/rails db:create
+
+docker compose exec web bin/rails db:migrate
+

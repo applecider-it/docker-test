@@ -1,0 +1,12 @@
+name: docker_wsl_bc
+
+services:
+  node:
+    image: node:22-alpine
+    user: "1000:1000"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "tail -f /dev/null"
+    tty: true
+    container_name: bc_node

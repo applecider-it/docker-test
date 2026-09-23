@@ -1,0 +1,102 @@
+
+Laravel
+
+cd ~/workspace/github/docker-test/laravel
+
+-----------------------------------
+
+port
+
+laravel: 8000:8000
+laravel vite: 5173:5173
+laravel mysql: 4306:3306
+
+-----------------------------------
+
+.env
+DB_HOST
+変更
+
+
+ローカル起動
+
+composer dev
+
+php artisan serve
+
+npm run dev
+
+ビルド
+
+npm run build
+
+
+docker起動
+
+docker compose up
+
+docker compose exec php composer docker
+
+docker compose exec php php artisan serve --host=0.0.0.0
+
+docker compose exec php npm run dev
+
+ビルド
+
+docker compose exec php npm run build
+
+
+http://localhost:8000
+
+
+-----------------------------------
+
+セットアップ
+
+
+cd ~/workspace/github/docker-test/laravel
+
+.env
+DB_HOST
+変更
+
+
+ローカル起動
+
+composer install
+
+npm ci
+
+cp .env.example .env
+
+php artisan key:generate
+
+--
+
+CREATE DATABASE laravel_db_docker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE USER 'laravel_user_docker'@'%' IDENTIFIED BY 'secret1234';
+GRANT ALL PRIVILEGES ON laravel_db_docker.* TO 'laravel_user_docker'@'%';
+
+FLUSH PRIVILEGES;
+
+--
+
+php artisan migrate
+
+
+
+
+docker起動
+
+docker compose up
+
+cp .env.example .env
+
+docker compose exec php composer install
+
+docker compose exec php npm ci
+
+docker compose exec php php artisan key:generate
+
+docker compose exec php php artisan migrate
